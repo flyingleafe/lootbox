@@ -3,6 +3,7 @@
 
 module Message where
 
+import Universum
 import Codec.Serialise (Serialise (..))
 
 import Loot.Network.Message

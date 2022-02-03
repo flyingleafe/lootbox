@@ -9,6 +9,7 @@
 
 module Main where
 
+import Universum
 import Data.Yaml (decodeFileEither)
 import Fmt (listF, (+|), (|+))
 import Monad.Capabilities (emptyCaps)

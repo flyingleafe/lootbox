@@ -15,6 +15,7 @@ module Loot.Config.Lens
   , lensOfC
   ) where
 
+import Universum
 import Data.Vinyl (Label (..))
 import Data.Vinyl.TypeLevel (type (++))
 import GHC.TypeLits (ErrorMessage (Text), Symbol, TypeError)

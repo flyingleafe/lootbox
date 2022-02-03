@@ -17,6 +17,7 @@ module Loot.Network.ZMQ.Client
     , updatePeers
     ) where
 
+import Universum
 import Control.Concurrent (threadDelay)
 import qualified Control.Concurrent.Async as A
 import qualified Control.Concurrent.STM.TQueue as TQ

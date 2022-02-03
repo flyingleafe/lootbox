@@ -3,6 +3,7 @@ module Loot.Log.Component
        ( allocateLogging
        ) where
 
+import Universum
 import Loot.Log.Actions
 import Loot.Log.Config
 import Loot.Log.Internal
@@ -19,7 +20,7 @@ allocateLogging
     -> NameSelector
     -> ComponentM (Logging m)
 allocateLogging LogConfig {..} nameSel = do
-    actionList <- zipWithM allocateBackend [1..] backends 
+    actionList <- zipWithM allocateBackend [1..] backends
     let predicate msg = msgSeverity msg >= minSeverity
         logAction = cfilter predicate $ mconcat actionList
     buildComponent_ "logging" . pure $ fromLogAction nameSel logAction

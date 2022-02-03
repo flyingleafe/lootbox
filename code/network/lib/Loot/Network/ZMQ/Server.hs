@@ -17,6 +17,7 @@ module Loot.Network.ZMQ.Server
        , registerListener
        ) where
 
+import Universum
 import Control.Concurrent (threadDelay)
 import Control.Concurrent.Async as A
 import qualified Control.Concurrent.STM.TQueue as TQ

@@ -10,4 +10,3 @@
 <<: *meta
 default-extensions: *default-extensions
 dependencies: *dependencies
-ghc-options: *ghc-options

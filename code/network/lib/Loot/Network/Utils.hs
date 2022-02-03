@@ -13,6 +13,7 @@ module Loot.Network.Utils
     , getCurrentTimeMs
     ) where
 
+import Universum
 import qualified Data.Time.Clock as Tm
 import Data.Time.Clock.POSIX (getPOSIXTime)
 import Numeric as N

@@ -54,6 +54,7 @@ module Loot.Config.Record
   , selection
   ) where
 
+import Universum
 import Data.Default (Default (..))
 import Data.Validation (Validation (Failure, Success), toEither)
 import Data.Vinyl (Label, Rec (RNil, (:&)))

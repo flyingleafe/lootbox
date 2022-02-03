@@ -2,12 +2,13 @@
 {-# LANGUAGE DataKinds       #-}
 {-# LANGUAGE TypeOperators   #-}
 module Loot.Log.CPS
-       ( -- * Continuation-passing style function for 'Logging' capability 
+       ( -- * Continuation-passing style function for 'Logging' capability
          withLogging
        , withConfigAction
        , withLogCombined
        ) where
 
+import Universum
 import Loot.Log.Actions
 import Loot.Log.Config (LogConfig (..), BackendConfig (..))
 import Loot.Log.Internal
@@ -40,7 +41,7 @@ withConfigAction
     :: (MonadBaseControl IO n, MonadIO m)
     => LogConfig
     -> (LogAction m Message -> n r) -> n r
-withConfigAction LogConfig {..} = runCont $ 
+withConfigAction LogConfig {..} = runCont $
     cfilter predicate <$> cont (withLogCombined $ map makeContAction backends)
   where
     makeContAction = \case

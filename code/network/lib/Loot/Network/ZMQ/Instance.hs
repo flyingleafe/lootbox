@@ -18,6 +18,7 @@ module Loot.Network.ZMQ.Instance
     , registerListenerDefault
     ) where
 
+import Universum
 import Loot.Base.HasLens (HasLens (..), HasLens')
 import qualified Loot.Network.Class as C
 import qualified Loot.Network.ZMQ.Client as ZC

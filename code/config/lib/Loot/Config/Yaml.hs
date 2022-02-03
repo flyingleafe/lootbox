@@ -14,6 +14,7 @@ module Loot.Config.Yaml
   , OptionsToJson (..)
   ) where
 
+import Universum
 import Data.Aeson (FromJSON (parseJSON), ToJSON (toJSON), Value (Object))
 import Data.Aeson.BetterErrors (Parse, fromAesonParser, keyMay, keyOrDefault,
                                 toAesonParser')

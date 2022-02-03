@@ -5,6 +5,7 @@
 
 module Test.Loot.Crypto.Bip39 where
 
+import Universum
 import Loot.Crypto.Bip39
 
 import Control.Exception (evaluate)
@@ -92,8 +93,8 @@ unit_bip_test_vectors :: (String -> IO ()) -> Assertion
 unit_bip_test_vectors step = forM_ bipTestVectors $ \(ent, mnemonic, seed, _) -> do
     step $ decodeUtf8 ent
 
-    let (ent', _) = decode ent
-    let (seed', _) = decode seed
+    let Right ent' = decode ent
+    let Right seed' = decode seed
 
     mnemonic @=? unwords (entropyToMnemonic ent')
     seed' @=? mnemonicToSeed mnemonic "TREZOR"
