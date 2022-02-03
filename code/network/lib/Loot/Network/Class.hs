@@ -63,6 +63,7 @@ module Loot.Network.Class
     , NetworkingServ (..)
     ) where
 
+import Universum
 import Control.Lens (makeLenses)
 import Data.Default (Default (..))
 

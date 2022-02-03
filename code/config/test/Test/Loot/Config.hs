@@ -10,6 +10,7 @@
 
 module Test.Loot.Config where
 
+import Universum
 import Data.Aeson (FromJSON, ToJSON, eitherDecode, encode)
 import Fmt (Buildable (..), fmt)
 import Options.Applicative (Parser, auto, defaultPrefs, execParserPure,

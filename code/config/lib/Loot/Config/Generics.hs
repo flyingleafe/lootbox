@@ -57,6 +57,7 @@ module Loot.Config.Generics
        , KnownPrimitiveConfigKind
        ) where
 
+import Universum
 import Data.Vinyl (Rec (RNil, (:&)), (<+>))
 import Data.Vinyl.TypeLevel (type (++))
 import GHC.Generics ((:*:) (..), (:+:))

@@ -9,6 +9,7 @@ module Loot.Log.Rio
     , defaultModifyLogNameSel
     ) where
 
+import Universum
 import Lens.Micro (to)
 import Loot.Base.HasLens (HasLens', lensOf)
 

@@ -7,6 +7,7 @@ module Loot.Log.Internal.Message
        , toSyslogMessage
        ) where
 
+import Universum
 import Loot.Log.Internal.Name (Name)
 
 import Colog.Syslog.Priority

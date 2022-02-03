@@ -6,6 +6,7 @@
 
 module Loot.Network.Example () where
 
+import Universum
 import Control.Concurrent (threadDelay, withMVar)
 import qualified Control.Concurrent.Async.Lifted as A
 import Control.Lens (makeLenses)

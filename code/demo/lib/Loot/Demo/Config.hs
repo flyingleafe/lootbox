@@ -14,6 +14,7 @@ module Loot.Demo.Config
        , defaultConfig
        ) where
 
+import Universum
 import Loot.Config ((:::), (::<), ConfigKind (Final, Partial), ConfigRec, option, (?~))
 import Loot.Log (LogConfig)
 

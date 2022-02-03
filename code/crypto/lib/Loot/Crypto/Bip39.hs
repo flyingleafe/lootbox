@@ -17,6 +17,7 @@ module Loot.Crypto.Bip39
        , bytesToIndices
        ) where
 
+import Universum
 import Control.Exception.Safe (impureThrow)
 import Control.Monad.Except (MonadError (throwError), runExcept)
 import Crypto.Hash (hashWith)

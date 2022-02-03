@@ -20,6 +20,7 @@ module Loot.Config.CLI
   , (.:-)
   ) where
 
+import Universum
 import Data.Vinyl (Label, rcast, rreplace, type (<:))
 import Lens.Micro (ASetter')
 import Options.Applicative (Parser, optional)

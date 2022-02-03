@@ -9,6 +9,7 @@ module Loot.Log.Config
        , loadConfigDefault
        ) where
 
+import Universum
 import Loot.Log.Internal
 
 import Colog.Syslog.Config
@@ -67,7 +68,7 @@ instance FromJSON BackendConfig where
         case destType :: Text of
             "stderr" -> return StdErr
             "file" -> File <$> v .: "path"
-            "syslog" -> Syslog <$> parseJSON (Object v) -- short-circuiting: it will 
+            "syslog" -> Syslog <$> parseJSON (Object v) -- short-circuiting: it will
                         -- avoid adding a "config" key and parse SyslogConfig directly
             t -> fail $ "Parsing BackendConfig failed: unknown backend type: \""+|t|+"\""
 

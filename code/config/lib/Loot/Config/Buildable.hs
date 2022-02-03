@@ -12,6 +12,7 @@ module Loot.Config.Buildable
   (
   ) where
 
+import Universum
 import Data.Vinyl (Rec (RNil, (:&)))
 import Fmt (Buildable (..), Builder, blockMapF)
 import GHC.TypeLits (KnownSymbol)

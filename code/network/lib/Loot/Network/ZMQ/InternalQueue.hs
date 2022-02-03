@@ -8,6 +8,7 @@ module Loot.Network.ZMQ.InternalQueue
     , iqReceive
     ) where
 
+import Universum
 import Control.Concurrent.STM.TQueue (TQueue, newTQueueIO, tryReadTQueue, writeTQueue)
 import qualified Data.List.NonEmpty as NE
 import System.Random (randomRIO)

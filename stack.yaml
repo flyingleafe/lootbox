@@ -8,7 +8,6 @@ packages:
   - code/crypto
   - code/log
   - code/network
-  - code/prelude
 
   - code/demo
 

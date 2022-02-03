@@ -13,6 +13,7 @@ module Loot.Log.Actions
        , withLogAction
        ) where
 
+import Universum
 import Loot.Log.Internal.Message
 
 import Colog.Actions (logByteStringStdout, logByteStringStderr, logByteStringHandle)
@@ -43,13 +44,13 @@ logMessageFile = cmap fmtMessageFlat . logByteStringHandle
 
 -- | Continuation-passing style version of 'logMessageStdout'. This is an utility
 -- function useful when dealing with multiple other CPS 'LogAction's, there is
--- no advantage in using this over 'logMessageStdout' 
+-- no advantage in using this over 'logMessageStdout'
 withLogMessageStdout :: MonadIO m => (LogAction m Message -> n r) -> n r
 withLogMessageStdout = withLogAction logMessageStdout
 
 -- | Continuation-passing style version of 'logMessageStderr'. This is an utility
 -- function useful when dealing with multiple other CPS 'LogAction's, there is
--- no advantage in using this over 'logMessageStderr' 
+-- no advantage in using this over 'logMessageStderr'
 withLogMessageStderr :: MonadIO m => (LogAction m Message -> n r) -> n r
 withLogMessageStderr = withLogAction logMessageStderr
 

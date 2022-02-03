@@ -5,6 +5,7 @@
 {-# LANGUAGE KindSignatures            #-}
 {-# LANGUAGE TypeFamilies              #-}
 {-# LANGUAGE TypeFamilyDependencies    #-}
+{-# LANGUAGE TypeSynonymInstances      #-}
 
 -- | Messages and message-dependent callbacks matching.
 
@@ -19,15 +20,17 @@ module Loot.Network.Message
        , runCallbacksInt
        ) where
 
+import Universum
 import Codec.Serialise (DeserialiseFailure, Serialise (..), deserialiseOrFail)
 import qualified Data.ByteString.Lazy as BSL
-import Data.Dependent.Map (DSum ((:=>)))
+import Data.Dependent.Sum (DSum ((:=>)))
 import qualified Data.Dependent.Map as D
-import Data.GADT.Compare ((:~:) (Refl), GEq (..), GOrdering (..))
+import Data.GADT.Compare (GCompare (..), GEq (..), GOrdering (..))
 import Data.Reflection (reifyNat)
 import Data.Singletons.TypeLits hiding (natVal)
+import Data.Singletons.Decide (decideEquality)
 import Data.Tagged (Tagged (..))
-import Data.Type.Equality (testEquality)
+import Data.Type.Equality ((:~:) (Refl))
 
 -- todo require typeable?
 -- | Message is a type that has unique message type (expressed by
@@ -68,12 +71,12 @@ handlerDecoded action =
     handler $ \ex (Tagged bs :: Tagged (k,d) ByteString) ->
                 action ex (deserialiseOrFail $ BSL.fromStrict bs)
 
-instance GEq (Sing :: Nat -> *) where
-    geq = testEquality
+instance GEq SNat where
+    geq = decideEquality
 
-instance D.GCompare (Sing :: Nat -> *) where
+instance GCompare SNat where
     gcompare s1@(SNat :: SNat n) s2@(SNat :: SNat m) =
-        case testEquality s1 s2 of
+        case decideEquality s1 s2 of
           Just Refl -> GEQ
           Nothing ->
             case compare (natVal (Proxy @n)) (natVal (Proxy @m)) of

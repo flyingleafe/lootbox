@@ -1,13 +1,14 @@
 name: loot-demo
+default-extensions:
+  - NoImplicitPrelude
 
 library:
   source-dirs: lib
 
   dependencies:
-    - base-noprelude
-
+    - base
+    - universum
     - loot-config
-    - loot-prelude
     - loot-log
 
 executables:
@@ -16,12 +17,11 @@ executables:
     main: Main.hs
 
     dependencies:
-      - base-noprelude
+      - base
+      - universum
       - loot-demo
       - loot-log
-
       - loot-demo
-      - loot-prelude
 
       - caps
       - fmt

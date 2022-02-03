@@ -13,6 +13,7 @@ module Loot.Network.BiTQueue
     , sendBtq
     ) where
 
+import Universum
 import Control.Concurrent.STM.TQueue (TQueue, newTQueueIO, readTQueue, tryReadTQueue, writeTQueue)
 
 -- | Two-ended queue, first parameter is messages user receives,

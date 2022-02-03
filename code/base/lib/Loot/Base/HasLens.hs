@@ -12,6 +12,7 @@ module Loot.Base.HasLens
     , HasCtx
     ) where
 
+import Universum
 import Data.Coerce (coerce)
 import Data.Tagged (Tagged (..))
 

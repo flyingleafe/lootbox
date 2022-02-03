@@ -32,7 +32,7 @@ module Loot.Log.Internal.Logging
        , Severity (..)
        ) where
 
-import Prelude hiding (toList)
+import Universum hiding (toList)
 
 import Loot.Log.Internal.Name
 import Loot.Log.Internal.Message

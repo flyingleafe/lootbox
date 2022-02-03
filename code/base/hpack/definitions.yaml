@@ -38,15 +38,11 @@ _definitions:
         - TupleSections
         - TypeApplications
         - ViewPatterns
+        - NoImplicitPrelude
 
     - &dependencies
-        - base-noprelude
-        - loot-prelude
-
-    - &ghc-options
-        - -Wall
-        - -hide-package base
-
+        - base
+        - universum
 
   _utils:
     - &lib-common
